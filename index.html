@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/jquery.magnify.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+  <title>Máquinas Parise</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <div class="container"> <a class="navbar-brand" href="#"> <img src="./images/logo/logo.png" alt="Logo" class="logo">
+      </a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span
+          class="navbar-toggler-icon"></span> </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"> <a class="nav-link" href="#inicio">Ínicio <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item"> <a class="nav-link" href="#projetos">Projetos <span class="sr-only"></span></a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#servicos">Serviços <span class="sr-only"></span></a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#quemsomos">Quem Somos <span class="sr-only"></span></a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#contato">Contato <span class="sr-only"></span></a> </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="main-img" id="inicio">
+    <div class="text-img">
+      <h1 class="font-weight-bold text-center">HÁ MAIS DE 20 ANOS ATENDENDO CLIENTES EM TODO O BRASIL</h1>
+      <h5 class="text-center">Excelência e desempenho são nossas principais características.</h5>
+    </div>
+  </div>
+  <div class="light-bg">
+    <div class="container">
+      <div class="row" id="projetos">
+        <div class="col">
+          <h2 class="text-center mt-5">PROJETOS</h2>
+          <div class="text-border"></div>
+        </div>
+      </div>
+      <div class="row mt-5" ng-app="myApp" ng-controller="photoCtrl">
+        <div class="col" ng-if="fotos">
+          <ul class="nav nav-pills mb-3 nav-fill" id="pills-tab" role="tablist">
+            <li class="nav-item" ng-repeat="item in fotos"> <a class="nav-link" ng-class="{active: $index === 0}"
+                id="{{item.id}}-tab" data-toggle="pill" href="#{{item.id}}" role="tab" aria-controls="{{item.id}}"
+                aria-selected="true">{{item.name}}</a> </li>
+          </ul>
+          <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show" ng-class="{active: $index === 0}" id="{{item.id}}" role="tabpanel"
+              aria-labelledby="{{item.id}}-tab" ng-repeat="item in fotos">
+              <div class="row">
+                <div class="col-md-4" ng-repeat="fotos in item.photos">
+                  <div class="card-project">
+                    <div class="project-photo"> <a href={{fotos.src}} data-magnify="gallery"
+                        data-caption={{fotos.description}}> <img src={{fotos.src}} alt="project-photo"> </a> </div>
+                    <div class="project-text"> <span>{{fotos.date}}</span>
+                      <p>{{fotos.description}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row" id="servicos">
+      <div class="col">
+        <h2 class="text-center mt-5">SERVIÇOS</h2>
+        <div class="text-border"></div>
+      </div>
+    </div>
+    <div class="servicos mt-5">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="servicos-item"> <img src="./images/servicos/projetos.svg" alt="">
+            <h6 class="text-center mt-3">DESENVOLVIMENTO DE PROJETOS</h6>
+            <p class="text-center">Desenvolvemos projetos nos ramos de beneficiamento de cereais e grãos, movimentação e
+              transporte de cargas de vários tipos, fabrica de ração, peneiras, entre outros.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="servicos-item"> <img src="./images/servicos/equipe.svg" alt="">
+            <h6 class="text-center mt-3">SOLUÇÕES</h6>
+            <p class="text-center">Temos uma equipe que analisa e traz soluções para melhor atendermos nossos clientes
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="servicos-item"> <img src="./images/servicos/desenvolvimento.svg" alt="">
+            <h6 class="text-center mt-3">CONSULTORIA</h6>
+            <p class="text-center">Entre em contato para obter seu projeto e facilitar seu dia a dia no campo com mais
+              tecnologia e menos desperdícios, gerando maiores lucros com nossos equipamentos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="container">
+    <div class="row" id="quemsomos">
+      <div class="col">
+        <h2 class="text-center mt-5">QUEM SOMOS</h2>
+        <div class="text-border"></div>
+      </div>
+    </div>
+    <div class="quem-somos mt-5">
+      <div class="row mb-5">
+        <div class="col-md-6">
+          <h2>MÁQUINAS PARISE</h2>
+          <h6 class="font-weight-normal mt-5 mb-5"> Localizada na cidade de Maringá - PR, fundada pelo Sr. Osvaldo
+            Parise a mais de 20 anos, a Maquinas Parise leva a seus clientes produtos com alta tecnologia e excelente
+            matéria-prima, gerando alta performance em seus equipamentos para atender com qualidade seus clientes. </h6>
+        </div>
+        <div class="col-md-6"> <img src="./images/office.jpg"> </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="container">
+    <div class="row" id="contato">
+      <div class="col">
+        <h2 class="text-center mt-5">Contato</h2>
+        <div class="text-border"></div>
+      </div>
+    </div>
+    <div class="contato mt-3">
+      <div class="row">
+        <div class="col">
+          <div class="map">
+            <div class="mapouter">
+              <div class="gmap_canvas"><iframe width="100%" height="500" id="gmap_canvas"
+                  src="https://maps.google.com/maps?q=R.%20Pioneiro%20Jo%C3%A3o%20Zavatini%2C%201521%20-%20Copacabana%20Res.%2C%20Maring%C3%A1%20-%20PR%2C%2087023-430&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
+                  href="https://www.easy-ptable.com">periodic table</a></div>
+              <style>
+                .mapouter {
+                  position: relative;
+                  text-align: right;
+                  height: 500px;
+                  width: 100%;
+                }
+
+                .gmap_canvas {
+                  overflow: hidden;
+                  background: none !important;
+                  height: 500px;
+                  width: 100%;
+                }
+              </style>
+            </div>
+            <div class="row mt-5 mb-5">
+              <div class="col-md-4">
+                <div class="servicos-item"> <img src="./images/contato/telefone.svg" alt="">
+                  <h6 class="text-center mt-3">TELEFONE</h6>
+                  <p class="text-center font-weight-normal mb-0">(44) 3267-7822</p>
+                  <p class="text-center font-weight-normal">(44) 99961-4493</p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="servicos-item"> <img src="./images/contato/marker.svg" alt="">
+                  <h6 class="text-center mt-3">ENDEREÇO</h6>
+                  <p class="text-center font-weight-normal">R. Pioneiro João Zavatini, 1521 - Maringá</p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="servicos-item"> <img src="./images/contato/email.svg" alt="">
+                  <h6 class="text-center mt-3">E-MAIL</h6>
+                  <p class="text-center font-weight-normal">maquinasparise1@hotmail.com</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <table id="dynamicTable"> </table>
+  <footer>
+    <div class="container">
+      <h6>Copyright 2020 Felipe Gerolomo - All Rights Reserved.</h6>
+    </div>
+  </footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+  <script src="./js/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+  <script src="./js/jquery.magnify.min.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+
+</html>
