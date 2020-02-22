@@ -1,0 +1,28 @@
+{
+  "name": "MaquinasParise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp-changed": "^4.0.2"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-imagemin": "^7.1.0",
+    "run-sequence": "^2.2.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FelipeGerolomo/MaquinasParise.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FelipeGerolomo/MaquinasParise/issues"
+  },
+  "homepage": "https://github.com/FelipeGerolomo/MaquinasParise#readme"
+}
